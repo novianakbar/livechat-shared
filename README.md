@@ -6,6 +6,35 @@ This package contains shared database entities that can be used across multiple 
 
 This shared package allows multiple services to reuse the same entity definitions without duplicating code. This is especially useful when creating microservices that need to work with the same database schema.
 
+## Installation
+
+To use this package in your Go project, run:
+
+```bash
+go get github.com/novianakbar/livechat-shared
+```
+
+## Usage
+
+Import the entities in your Go code:
+
+```go
+import "github.com/novianakbar/livechat-shared/entities"
+
+// Example usage
+func main() {
+    user := entities.User{
+        Email:    "user@example.com",
+        Name:     "John Doe",
+        Role:     "agent",
+        IsActive: true,
+    }
+    
+    // Use with GORM
+    // db.Create(&user)
+}
+```
+
 ## Entities Included
 
 - **User**: System users (admin, agent, etc.)
