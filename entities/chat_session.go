@@ -19,7 +19,7 @@ type ChatSession struct {
 	DepartmentID sql.NullString        `json:"department_id" gorm:"null;column:department_id"`
 	Department   *Department           `json:"department,omitempty" gorm:"foreignKey:DepartmentID;references:ID"`
 	Topic        string                `json:"topic" gorm:"column:topic;not null"`
-	Status       string                `json:"status" gorm:"column:status;not null;default:'waiting'"` // waiting, active, closed
+	Status       string                `json:"status" gorm:"column:status;not null;default:'waiting'"` // waiting, queued, active, closed
 	Priority     string                `json:"priority" gorm:"column:priority;default:'normal'"`       // low, normal, high, urgent
 	StartedAt    time.Time             `json:"started_at" gorm:"column:started_at"`
 	EndedAt      sql.NullTime          `json:"ended_at" gorm:"null;column:ended_at"`
